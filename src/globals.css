@@ -1,0 +1,10 @@
+@import '~normalize.css/normalize.css';
+
+body{
+  font-family: 'Helvetica', sans-serif;
+}
+
+#app{
+  width: 80%;
+  margin: 50px auto;
+}

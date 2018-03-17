@@ -1,0 +1,19 @@
+
+/* style.scss */
+$black: #222;
+
+.title{
+  $spacing: 10px;
+
+  color: $black;
+  padding-bottom: $spacing;
+  border-bottom: 1px dashed #bbb;
+  margin-bottom: $spacing;
+}
+
+.content{
+  color: $black;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
