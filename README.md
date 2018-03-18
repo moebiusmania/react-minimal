@@ -15,9 +15,19 @@ Developed mainly for me 😎 but open to everyone who may find this useful.
 * gh-pages (publish)
 
 ### Get started
-Good old 3-easy-stesp:
+A few steps to quick-start a new project:
 
-Clone the repo
+Clone the repo on a new folder
+```
+$ git clone https://github.com/moebiusmania/react-minimal my-project
+```
+
+Change the name in the `package.json`, this will also affect the HTML title and the Webpack's notifications:
+```json
+...
+  "name": "my-project"
+...
+```
 
 ```
 $ yarn

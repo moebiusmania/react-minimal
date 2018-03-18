@@ -23,6 +23,7 @@ module.exports = {
       alwaysNotify: true
     }),
     new HtmlWebpackPlugin({
+      title: pkg.name,
       template: './src/assets/index.html'
     })
   ],
