@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --hot",
     "build": "NODE_ENV=production webpack",
     "deploy": "gh-pages -d ./dist",
-    "build:deploy": "npm run build & npm run deploy"
+    "build:deploy": "npm run build && npm run deploy"
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
