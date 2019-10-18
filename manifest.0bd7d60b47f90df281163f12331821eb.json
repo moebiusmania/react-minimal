@@ -1,9 +1,0 @@
-{
-  "name": "react-minimal",
-  "short_name": "react-minimal",
-  "orientation": "portrait",
-  "display": "standalone",
-  "start_url": ".",
-  "description": "Lightweight starter kit for React.",
-  "background_color": "#ffffff"
-}
