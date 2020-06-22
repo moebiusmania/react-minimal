@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-export default (props) => {
-  const url = props.url || '';
+interface Props {
+  url?: string
+}
+
+export const Lorem: FunctionComponent<Props> = (props: Props) => {
+  const url: string = props.url || '';
 
   return (
     <div>

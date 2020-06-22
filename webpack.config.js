@@ -1,5 +1,3 @@
-
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -10,7 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: {
-    demo: './src/index.js'
+    demo: './src/index.tsx'
   },
   mode: env,
   output: {
@@ -42,25 +40,35 @@ module.exports = {
       // ]
     })
   ],
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
   devtool: 'source-map',
   module: {
     rules: [
       {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        enforce: "pre",
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-        }
+        loader: "source-map-loader"
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },{
+      }, {
         test: /\.scss$/,
         use: [
-          'style-loader', 
+          'style-loader',
           // 'css-loader?modules=true&localIdentName=[local]___[hash:base64:5]', 
-          'css-loader?modules=true', 
+          'css-loader?modules=true',
           'sass-loader']
       }
     ]

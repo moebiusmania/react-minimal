@@ -1,5 +1,5 @@
 # react-minimal
-> A minimal starter kit for React with Webpack, Babel, SASS &amp; CSS Modules.
+> A minimal starter kit for React with Webpack, Typescript, SASS &amp; CSS Modules.
 
 ![./logo.png](./logo.png)
 
@@ -8,12 +8,12 @@ As the name says, this is *another* React starter kit created to give the minimu
 Developed mainly for me 😎 but open to everyone who may find this useful.
 
 * React & React DOM
+* Typescript
 * Webpack
   * HTML plugin
   * Notifier
 * SASS & normalize.css
 * Styles loaded as CSS Modules
-* Babel, with the `env` & `React` presets
 * gh-pages (publish)
 
 ### Get started
@@ -34,12 +34,12 @@ Change the name in the `package.json`, this will also affect the HTML title and 
 then
 
 ```
-$ yarn
+$ npm install
 ```
 to install dependencies, and
 
 ```
-$ yarn start
+$ npm start
 ``` 
 to start webserver on `localhost:8090`
 
@@ -47,17 +47,17 @@ to start webserver on `localhost:8090`
 
 To create deployable static files in the `./dist` folder:
 ```
-$ yarn build
+$ npm run build
 ```
 
 to deploy the `./dist` folder as a Github page:
 ```
-$ yarn deploy
+$ npm run deploy
 ```
 
 if you are lazy and want to do both build & publish in a single command:
 ```
-$ yarn build:deploy
+$ npm run build:deploy
 ```
 
 ### Styles
