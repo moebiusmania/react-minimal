@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const pkg = require('./package.json');
 
@@ -8,18 +8,24 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: {
-    demo: './src/index.tsx'
+    main: './src/index.tsx'
   },
   mode: env,
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'main.js',
-    chunkFilename: '[chunk].js'
+    filename: '[name].[hash].js',
+    chunkFilename: '[chunk].[hash].js',
+    clean: true
+  },
+  optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [
-    new WebpackNotifierPlugin({
-      title: pkg.name,
-      alwaysNotify: true
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
       title: pkg.name,
@@ -62,14 +68,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader' }
+        ]
       }, {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          // 'css-loader?modules=true&localIdentName=[local]___[hash:base64:5]', 
-          'css-loader?modules=true',
-          'sass-loader']
+          MiniCssExtractPlugin.loader,
+          //{ loader: 'css-loader?modules=true&localIdentName=[local]___[hash:base64:5]' },
+          { loader: 'css-loader' , options: { modules: true} },
+          { loader: 'sass-loader' },
+        ]
       }
     ]
   },
@@ -80,9 +90,10 @@ module.exports = {
       poll: true
     },
     compress: true,
-    port: 8090,
+    port: 3000,
     host: 'localhost',
     hot: true,
     inline: true
   }
+  
 };

@@ -11,12 +11,11 @@ Developed mainly for me 😎 but open to everyone who may find this useful.
 * Typescript
 * Webpack
   * HTML plugin
-  * Notifier
 * SASS & normalize.css
 * Styles loaded as CSS Modules
 * gh-pages (publish)
 
-### Get started
+## Get started
 A few steps to quick-start a new project:
 
 Clone the repo on a new folder
@@ -34,16 +33,16 @@ Change the name in the `package.json`, this will also affect the HTML title and 
 then
 
 ```
-$ npm install
+$ npm ci
 ```
 to install dependencies, and
 
 ```
 $ npm start
 ``` 
-to start webserver on `localhost:8090`
+to start webserver on `localhost:3000`
 
-### Build & publish
+## Build & publish
 
 To create deployable static files in the `./dist` folder:
 ```
@@ -55,16 +54,14 @@ to deploy the `./dist` folder as a Github page:
 $ npm run deploy
 ```
 
-if you are lazy and want to do both build & publish in a single command:
-```
-$ npm run build:deploy
-```
-
-### Styles
+## Styles
 This starter kit supports both regular CSS and SASS, with a little difference in how they are managed:
 
-* `.css` files are loaded as style tag in the main document, this is great for global styles and precompiled libraries.
+* `.css` files are handled as regular CSS.
 * `.scss` files are loaded as CSS modules, this is a best fit for components.
 
-### License
+## Changelog
+Check the [releases page](https://github.com/moebiusmania/react-minimal/releases/) to get updated on what changed in the latest version.
+
+## License
 Released under the [MIT license](LICENSE).
