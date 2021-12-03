@@ -84,16 +84,10 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    watchContentBase: true,
-    watchOptions: {
-      poll: true
-    },
     compress: true,
     port: 3000,
     host: 'localhost',
     hot: true,
-    inline: true
   }
   
 };
